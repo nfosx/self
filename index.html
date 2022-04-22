@@ -33,17 +33,14 @@
 
 				<!-- Main -->
 					<section id="main">
-						<!-- Screenshot Button -->
-						<span style="display: flex; position: fixed; top: 2em; right: 2em; opacity: 0.65; font-size: 0.8em;" v-show="backButton"><button class="button small" @click="screenShot" id="screenshot">保存网页截图</button></span>
-
 						<!-- Welcome Message and Contacts -->
 						<header v-show="Contacts">
 							<span class="avatar"><img src="images/avatar.jpg" alt="" style="width: 122px; height: 122px;" /></span>
-							<h1>Untitled</h1>
+							<h1>NUT</h1>
 							<transition-group name="fade">
 								<div v-show="defaults" key="text">
-									<p>Lorem</p>
-									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore facere accusamus quae nesciunt at fuga dicta vitae quidem reiciendis. Quos blanditiis corporis vel iusto reprehenderit ratione distinctio fugiat quae sed.</p>
+									<p>Hello</p>
+									<p>My name is NUT (NFX , nxs , nfosx). Thx for visiting </p>
 									<button class="button small fit" @click="showAbout" v-bind:disabled="onTransition==1">Click!</button>
 								</div>
 								<div v-for="item in contacts" v-if="item.show" key="item.name" v-html="item.content"></div>
@@ -80,7 +77,7 @@
 			</div>
 
 		<!-- Scripts -->
-			<script>
+			<script>	
 				if ('addEventListener' in window) {
 					window.addEventListener('load', function() { 
 						document.body.className = document.body.className.replace(/\bis-preload\b/, '');
