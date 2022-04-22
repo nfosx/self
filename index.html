@@ -47,7 +47,7 @@
 									<button class="button small fit" @click="showAbout" v-bind:disabled="onTransition==1">Click!</button>
 								</div>
 								<div v-for="item in contacts" v-if="item.show" key="item.name" v-html="item.content"></div>
-								<button class="button small" key="button" @click="hideContact(true)" style="opacity: 0.55;" v-show="backButton">返回</button>
+								<button class="button small" key="button" @click="hideContact(true)" style="opacity: 0.55;" v-show="backButton">return</button>
 							</transition-group>
 						</header>
 						<hr />
@@ -65,11 +65,11 @@
 								<div v-html="html" key="html"></div>
 								<img v-bind:src="img" key="img" style="width: 95%; height: auto;" v-for="img in imgs" />
 								<div key="buttons">
-									<button class="button small" v-bind:disabled="(nowPage < startPage || onTransition==1)" @click="navigate(-1)">上一页</button>
-									<button class="button small" v-bind:disabled="(nowPage >= endPage - 2 || onTransition==1)" @click="navigate(1)">下一页</button>
+									<button class="button small" v-bind:disabled="(nowPage < startPage || onTransition==1)" @click="navigate(-1)">previous page</button>
+									<button class="button small" v-bind:disabled="(nowPage >= endPage - 2 || onTransition==1)" @click="navigate(1)">next page</button>
 								</div>
 								<hr key="br" />
-								<button @click="returnToContact" key="button" class="button fit" v-bind:disabled="onTransition==1">返回</button>
+								<button @click="returnToContact" key="button" class="button fit" v-bind:disabled="onTransition==1">return</button>
 							</transition-group>
 						</header>
 					</section>
@@ -242,7 +242,7 @@
 							button.innerHTML = "screenshot";
 							html2canvas(document.body).then(canvas => {
 								var w = window.open();
-								w.document.title = "保存截图";
+								w.document.title = "save screenshot";
 								var i = w.document.createElement("img");
 								w.document.body.appendChild(i);
 								i.src = canvas.toDataURL('image/jpg');
