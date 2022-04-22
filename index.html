@@ -23,8 +23,8 @@
 		<div class="loader">
 		  <div class="container">
 		    <h1>🍊</h1>
-		    <p>摇匀</p>
-		    <p>再喝</p>
+		    <p>NUT</p>
+		    <p>NUT</p>
 		  </div>
 		</div>
 		
@@ -93,7 +93,7 @@
 				var mainsec = new Vue({
 					el:'#main',
 					data:{
-						title:"", // The title of one page
+						title:"THE	", // The title of one page
 						html:"", // HTML text of one page
 						texts:[], // Pure texts of one page
 						imgs:[], // Image url of a page's images
@@ -112,24 +112,24 @@
 						//Contact info
 						contacts:[
 							{
-								name:"Wechat",
+								name:"Gmail",
 								icon:"icon brands fa-weixin",
-								desc:"微信",
-								content:"<img src='images/demoQR.png' class='qr' />",
+								desc:"Gmail",
+								content:"<img src='' class='qr' />",
 								show:false
 							},
 							{
-								name:"QQ",
+								name:"CC",
 								icon:"icon brands fa-qq",
-								desc:"QQ",
-								content:"<img src='images/demoQR.png' class='qr' /><h2>QQ:XXXXXX</h2>",
+								desc:"CC",
+								content:"<img src='' class='qr' /><h2></h2>",
 								show:false
 							},
 							{
 								name:"Github",
 								icon:"icon brands fa-github",
 								desc:"Github",
-								content:"<br /><a href='#' target='_blank'><img src='https://img.shields.io/badge/Github-Someone-brightgreen.svg' alt='Github' /></a><br /><a href=\"#\" target=\"_blank\">[Github](https://Github.com/Someone)</a>",
+								content:"<br /><a href='#' target='_blank'><img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white	' alt='Github' /></a><br /><a href=\"#\" target=\"_blank\">[Github](https://Github.com/nfxs)</a>",
 								show:false
 							}
 						],
@@ -145,26 +145,15 @@
 							{
 								title:"Page 2",
 								texts:["Some text","And some text"],
-								html:"<h2>HTML Support</h2>",
+								html:"<h2>yes</h2>",
 								imgs:[""]
 							},
 							{
 								title:"Page 3",
 								texts:["Multi images"],
-								imgs:["images/bg.jpg","images/demoQR.png"],
+								imgs:[""],
 								html:""
 							},
-							{
-								title:"Page 4",
-								texts:["Another Demo"],
-								html:"<a onclick=\"todonate()\" style=\"color:#fff; background-color:#f0a1a8; border-radius: 0.3em; padding: 0.2em; cursor: pointer;\"><<u>Donate!</u>></a><br /><p style=\"color:#ccc; font-size:0.7em;\">Last updated: Apr. 14, 2021<p>",
-								imgs:[""]
-							},
-							{
-								title:"Eastern egg page!",
-								texts:["Can only access with ?page=#"],
-								html:"<a href='https://github.com/Jiaocz/Personal-page' target='_blank'>Origin project</a>"
-							}
 						],
 						/*            Change ends here                 */
 
@@ -250,15 +239,15 @@
 						screenShot: function(){
 							var button = document.getElementById("screenshot");
 							button.disabled = true;
-							button.innerHTML = "截图中…";
+							button.innerHTML = "screenshot";
 							html2canvas(document.body).then(canvas => {
 								var w = window.open();
 								w.document.title = "保存截图";
 								var i = w.document.createElement("img");
 								w.document.body.appendChild(i);
 								i.src = canvas.toDataURL('image/jpg');
-								w.alert("长按图片或直接保存图片即可");
-								button.innerHTML = "保存网页截图";
+								w.alert("save all screenshot");
+								button.innerHTML = "Save screenshots of web pages";
 								button.disabled = false;
 							});
 						}
@@ -303,22 +292,6 @@
 					}
 					if(FirstTriggered){
 						$("body").on("dblclick","img",function(){window.open(this.src)});
-					}
-					if(getQueryVariable("showContacts")||getQueryVariable("showcontacts")){
-							var url;
-							var browser = navigator.userAgent.toLowerCase();
-							if(mainsec.info == 1){
-								mainsec.returnToContact()
-							}
-							if (browser.match(/MicroMessenger/i) == 'micromessenger') {
-								//微信浏览器
-								url = "https://u.wechat.com/EO3JtzoXctOZXiAG8tvYHuI";
-								setTimeout(function(){mainsec.showContact("Wechat")},1500);
-							} else if(browser.indexOf(' qq') != -1 && browser.indexOf('mqqbrowser') != -1){
-								//qq内置浏览器
-								url = "https://qm.qq.com/cgi-bin/qm/qr?k=OZm0covTGqrELIwI0XKV6LxlKsCcLIsm";
-								setTimeout(function(){mainsec.showContact("QQ")},1500);
-							}
 					}
 					
 					FirstTriggered = false
